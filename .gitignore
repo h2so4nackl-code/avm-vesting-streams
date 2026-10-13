@@ -1,0 +1,6 @@
+/target/
+/contracts/*/target/
+/.runtime/
+*.state
+*.state.lock
+__pycache__/

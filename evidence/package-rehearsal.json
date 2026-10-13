@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "fresh_extraction_full_gate": true,
+  "source_locations_differ": true,
+  "compiler_and_optimized_bytes_match": true,
+  "canonical_artifacts": {
+    "vesting": {
+      "contract.compiler.wasm": "57ef83fd45f36bdc450064c2c579fec8bfb59793f72244ba64491679fb4631c7",
+      "contract.wasm": "e211240d49ffe9e256423b737ee36e9ea1cfff105b5b4a2e3352f51217e00cbd",
+      "contract.acab": "b41daa5b7aff1282339105496ae1e822b60bcc4cebf0951ee25af2b3e2221dbd",
+      "contract.descriptor": "7160867588bb8fcaba0967f48993eaa35f5d16f832a0080ff0d0825cb66df967"
+    },
+    "receiver": {
+      "contract.compiler.wasm": "7cfa2a2289b00cf422a933bead943c2ebf4ed87deb08e168315b88bab8cc94df",
+      "contract.wasm": "cdea8d27eb75e28f5e6c8f9958dcfa50503eeac884c2ca661292d2e36f8c84f3",
+      "contract.acab": "4943567f29165b5e4b04dce8270e0c07afea8fcb7ba780993f869de731db7e0a",
+      "contract.descriptor": "11c7b557e19aeac78b8d2c57d90683726c8bdad506ba85389591142cf775b684"
+    }
+  },
+  "accounting": {
+    "funded": true,
+    "time": 1800000403,
+    "attempts": 10,
+    "claimed": 1100,
+    "refunded": 800,
+    "pending": 0,
+    "held": 0,
+    "streams": [
+      {
+        "cancelled": true,
+        "cutoff": 1800000260,
+        "cap": 400,
+        "claimed": 400,
+        "refunded": 600,
+        "pending": [
+          0,
+          0
+        ]
+      },
+      {
+        "cancelled": true,
+        "cutoff": 1800000350,
+        "cap": 400,
+        "claimed": 400,
+        "refunded": 200,
+        "pending": [
+          0,
+          0
+        ]
+      },
+      {
+        "cancelled": false,
+        "cutoff": 0,
+        "cap": 0,
+        "claimed": 300,
+        "refunded": 0,
+        "pending": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "each_journey_replays_its_own_roots_and_fees": true,
+  "note": "Separate stand histories may have different account roots. Cross-run root identity is not claimed; compiler, optimizer and metadata bytes are identical."
+}

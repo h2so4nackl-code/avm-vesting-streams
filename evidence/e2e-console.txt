@@ -1,0 +1,1 @@
+Actual AVM vesting/refund/retry journey: PASS

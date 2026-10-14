@@ -12,17 +12,17 @@
   ],
   "contracts": {
     "vesting": {
-      "compiler_bytes": 57141,
-      "optimized_bytes": 51099,
-      "compiler_sha256": "57ef83fd45f36bdc450064c2c579fec8bfb59793f72244ba64491679fb4631c7",
-      "optimized_sha256": "e211240d49ffe9e256423b737ee36e9ea1cfff105b5b4a2e3352f51217e00cbd",
+      "compiler_bytes": 58137,
+      "optimized_bytes": 52115,
+      "compiler_sha256": "0808a26daeacab7b3b0f0e1a1800ce0b36a4034f35baa4bf5d3351332436b183",
+      "optimized_sha256": "8f874d1892579993d7ed2daa2d99cc56f01598c5fc4343359fa8e58fff9126b7",
       "two_independent_optimizer_outputs_match": true
     },
     "receiver": {
-      "compiler_bytes": 39039,
-      "optimized_bytes": 34535,
-      "compiler_sha256": "7cfa2a2289b00cf422a933bead943c2ebf4ed87deb08e168315b88bab8cc94df",
-      "optimized_sha256": "cdea8d27eb75e28f5e6c8f9958dcfa50503eeac884c2ca661292d2e36f8c84f3",
+      "compiler_bytes": 40042,
+      "optimized_bytes": 35539,
+      "compiler_sha256": "56c34af0d3667d2f5b2ca63e72ebbb650906e2f6930e0246202fca35ddadb5af",
+      "optimized_sha256": "c9efa98374e23bf08f7af4c217cdf448f6805a4fe8cde16dace55a764e3d92ea",
       "two_independent_optimizer_outputs_match": true
     }
   }

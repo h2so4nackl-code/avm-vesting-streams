@@ -26,3 +26,10 @@ is intentionally changed, first build metadata, regenerate identifiers using
 
 This archive is a standalone candidate. It does not claim an upstream PR,
 maintainer review or bounty acceptance for this third project.
+
+## SDK 0.2.0
+
+See [the standalone compatibility result](SDK-020.md). In-tree integration must
+use the current SDK path dependency and reviewed lock, without RUSTC_WRAPPER.
+The existing upstream integration PR is #11. Its approval and validation
+are separate from these standalone checks.

@@ -1,25 +1,29 @@
 # Tool and source provenance
 
-- Vendored `avm-contract-sdk`: unchanged source from `gosh-sh/avm-sdk` commit
-  `72ee42dbf923f081bf29b4a1a1b6ea012b6af54f`. `vendor/SHA256SUMS` records every
-  vendored file and the upstream licence. No external Rust registry dependencies.
-- Published AVM tool release: `avm-dev-335a0f09fdbc-sdk-0cbca40fad9a`.
-  Runtime source: `335a0f09fdbc98eb7a1056c0f6b84cd4f39d889e`; packaged SDK source:
-  `0cbca40fad9a8f11863197cbcbaf6208651752b9`.
-  Linux x86-64 archive SHA-256:
-  `2171ee865bc9fc2e1a1274dfdd0f4330dc362b1f49d38c0a35c4de41aa61d6f3`.
-- Rust 1.93.0, `wasm32-unknown-unknown`; release optimization `s`, LTO enabled,
-  one codegen unit, panic abort, symbol stripping. `RUSTC_WRAPPER` remaps the
-  project path to `/avm-vesting-streams` while preserving the official builder's
-  encoded VM flags. The official builder verifies two clean compilations.
-- Binaryen `version_133`; Linux archive SHA-256:
-  `2dc9c7813f5375db93d96ead4b78222fcc3e2677bbb832297af4797782a37489`.
-  The optimizer runs twice and compares bytes; flags and before/after hashes are
-  recorded in `evidence/optimization.json`. Compiler artifacts are retained as
-  `contract.compiler.wasm`; deployed artifacts are `contract.wasm`.
+Current validation uses the published **AVM SDK 0.2.0 / guest SDK 0.1.1** bundle.
+Vendored guest source and the unchanged release verifier come from the immutable
+SDK commit `0748f4f0767a26da8bc363bcb6b5585539d6970e`; `vendor/SHA256SUMS` checks all
+vendored bytes. The guest SDK licence is retained.
 
-The vendored SDK is newer than the packaged tool's SDK source. It remains an
-explicit path dependency and was tested against the published runtime's canonical
-ABI. The current SDK was not substituted into the runtime binary. Actual execution
-evidence is `evidence/avm-e2e.json.gz` (gzip-compressed JSON); hashes and exports are `evidence/artifacts.json`.
-Install scripts verify archive hashes before extraction.
+The runtime source is `06e96ef71006cca020575cbf35e6b82cc82a324e`. Its exact
+release, archive hash, profile and binary hashes are in `PROVENANCE.json`,
+`evidence/runtime-build-manifest.json` and `evidence/runtime-v020.json`.
+The host builder reports 0.1.0; that is distinct from the bundle version 0.2.0.
+
+Rust/Cargo 1.93.0 and rust-lld are enforced by the official builder, which
+compares two clean builds per guest using the reviewed Cargo.lock. SDK 0.2.0
+rejects RUSTC_WRAPPER, so no remapping wrapper is used. Per-build compiler/lock
+provenance is recorded in `evidence/build-provenance-*.txt`.
+
+Binaryen `version_133` is pinned by archive SHA-256
+`2dc9c7813f5375db93d96ead4b78222fcc3e2677bbb832297af4797782a37489`.
+It runs twice and compares outputs. Flags and before/after hashes are in
+`evidence/optimization.json`; original compiler WASM is retained.
+
+Actual execution evidence is the complete compressed `evidence/avm-e2e.json.gz`.
+`avm-e2e-summary.json` and `VALIDATION.json` summarize fresh local accounting and
+replay; `artifacts.json` records exports and SHA-256 values. See
+[SDK 0.2.0 migration](SDK-020.md) for requirements, state reset scope and limits.
+
+Historical SDK 0.1.0 package rehearsal results are retained under
+`evidence/historical-pre020/`; they are not evidence for the current SDK.

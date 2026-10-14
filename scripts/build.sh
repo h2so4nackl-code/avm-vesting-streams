@@ -10,7 +10,6 @@ export CARGO_PROFILE_RELEASE_OPT_LEVEL=s
 export CARGO_PROFILE_RELEASE_LTO=true
 export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 export CARGO_PROFILE_RELEASE_STRIP=symbols
-export RUSTC_WRAPPER="$root/scripts/remap-rustc.sh"
 for contract in vesting receiver; do
   "$sdk/bin/avm-contract-build" build --manifest-path "contracts/$contract/Cargo.toml" | tee "evidence/build-$contract.txt"
 done

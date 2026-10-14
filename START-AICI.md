@@ -9,7 +9,7 @@ Testele reale din standul AVM închid exact contabilitatea: 1.900 finanțate =
 reluarea lor, nu doar scenarii în care totul merge bine.
 
 Arhiva conține sursele, contractele WASM, testele, documentația și dovezile de
-execuție. Cele 72 de teste native au trecut. 1.200 de cazuri verifică matematica
+execuție. Cele 73 de teste native au trecut. 1.200 de cazuri verifică matematica
 față de un calcul independent Python, iar 14.400 de pași verifică stările și
 conservarea banilor.
 
@@ -18,3 +18,5 @@ Nu trebuie introduse chei private și nu sunt folosiți bani reali. Pentru însc
 la bounty trebuie publicat proiectul și trimis linkul conform anunțului.
 Proiect public: https://github.com/h2so4nackl-code/avm-vesting-streams
 Publicarea nu înseamnă aprobarea proiectului sau acordarea recompensei.
+
+Compatibilitatea a fost verificată cu SDK 0.2.0 și guest SDK 0.1.1, într-un stand local nou.

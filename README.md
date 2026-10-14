@@ -5,6 +5,14 @@ token vesting. One funded contract manages up to eight independent streams with
 immutable recipients, cliffs, linear or stepped accrual, and optional cancellation.
 Designed as an SDK example and regression-suite candidate.
 
+## SDK 0.2.0 compatibility
+
+Verified on 14 October 2026 with the published SDK 0.2.0 bundle and its guest SDK
+0.1.1: **60 application + 13 SDK = 73 native tests**, all contract builds and
+lints, and the actual AVM journey/replay passed. [Migration and provenance](docs/SDK-020.md)
+record the exact tools, profile and limitations. [GitHub Actions](https://github.com/h2so4nackl-code/avm-vesting-streams/actions)
+provides the current hosted result. The application contract logic is unchanged.
+
 ## Behavior
 
 - The owner funds the exact aggregate grant amount once, before the earliest start.
@@ -42,7 +50,7 @@ local main-value units, not a live NACKL payment or bounty award.
 
 ## Validation and reproduction
 
-Requirements: Linux x86-64 (Windows: WSL2), Bash, Python 3, curl, and rustup.
+Requirements: Linux x86-64-v3, glibc >=2.39 (Windows: WSL2), Bash, Python >=3.11, curl and Rust/Cargo 1.93.0.
 Dependencies are vendored; Rust checks and builds run offline after tool installation.
 
 ```bash
@@ -54,7 +62,7 @@ bash scripts/check.sh
 ```
 
 `check.sh` verifies formatting, source hashes, the seeded independent Python oracle,
-native and WASM Clippy, 60 application regressions and 12 SDK tests, official
+native and WASM Clippy, 60 application regressions and 13 SDK tests, official
 reproducible builds, canonical identifiers, two matching optimizer outputs, WASM
 exports without host imports, and the actual local stand journey. One regression
 checks 1,200 bigint oracle cases; another exercises 14,400 generated state transitions.

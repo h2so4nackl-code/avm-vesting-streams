@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "project": "avm-vesting-streams",
+  "sdk_bundle_version": "0.2.0",
+  "guest_sdk_version": "0.1.1",
+  "project_tests": 60,
+  "sdk_tests": 13,
+  "total_tests": 73,
+  "actual_avm_accounting": {
+    "funded": true,
+    "time": 1800000403,
+    "attempts": 10,
+    "claimed": 1100,
+    "refunded": 800,
+    "pending": 0,
+    "held": 0,
+    "streams": [
+      {
+        "cancelled": true,
+        "cutoff": 1800000260,
+        "cap": 400,
+        "claimed": 400,
+        "refunded": 600,
+        "pending": [
+          0,
+          0
+        ]
+      },
+      {
+        "cancelled": true,
+        "cutoff": 1800000350,
+        "cap": 400,
+        "claimed": 400,
+        "refunded": 200,
+        "pending": [
+          0,
+          0
+        ]
+      },
+      {
+        "cancelled": false,
+        "cutoff": 0,
+        "cap": 0,
+        "claimed": 300,
+        "refunded": 0,
+        "pending": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "replay_roots_fees_and_count_match": true,
+  "queue_message_count": 0,
+  "fresh_local_stand": true,
+  "full_journal": "avm-e2e.json.gz",
+  "full_journal_sha256": "a76499d6bc6b8586c41cdc9078adf68d3335218775160dd5b462928cbf91adef",
+  "artifacts": {
+    "vesting": {
+      "exports": [
+        "memory",
+        "avm_guest_alloc",
+        "avm_guest_free",
+        "init",
+        "process_message"
+      ],
+      "host_imports": 0,
+      "sha256": {
+        "contract.wasm": "8f874d1892579993d7ed2daa2d99cc56f01598c5fc4343359fa8e58fff9126b7",
+        "contract.acab": "b41daa5b7aff1282339105496ae1e822b60bcc4cebf0951ee25af2b3e2221dbd",
+        "contract.descriptor": "7160867588bb8fcaba0967f48993eaa35f5d16f832a0080ff0d0825cb66df967"
+      },
+      "wasm_bytes": 52115
+    },
+    "receiver": {
+      "exports": [
+        "memory",
+        "avm_guest_alloc",
+        "avm_guest_free",
+        "init",
+        "process_message"
+      ],
+      "host_imports": 0,
+      "sha256": {
+        "contract.wasm": "c9efa98374e23bf08f7af4c217cdf448f6805a4fe8cde16dace55a764e3d92ea",
+        "contract.acab": "4943567f29165b5e4b04dce8270e0c07afea8fcb7ba780993f869de731db7e0a",
+        "contract.descriptor": "11c7b557e19aeac78b8d2c57d90683726c8bdad506ba85389591142cf775b684"
+      },
+      "wasm_bytes": 35539
+    }
+  },
+  "runtime_scope": "Published SDK 0.2.0 local stand; synthetic principal, same DApp",
+  "mainnet_deployment": false,
+  "upstream_approval_claimed": false
+}
